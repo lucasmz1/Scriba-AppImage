@@ -11,7 +11,6 @@ sudo make install
 cd "${GITHUB_WORKSPACE}"
 cp "${GITHUB_WORKSPACE}"/icon.png "${GITHUB_WORKSPACE}"/AppDir/
 cp "${GITHUB_WORKSPACE}"/Scriba.desktop "${GITHUB_WORKSPACE}"/AppDir/
-cp "${GITHUB_WORKSPACE}"/install/etc/ "${GITHUB_WORKSPACE}"/AppDir/
 cd "${GITHUB_WORKSPACE}"/AppDir/
 xvfb-run -- ./sharun l -p -v -e -s -k /usr/bin/scriba
 ln sharun AppRun
