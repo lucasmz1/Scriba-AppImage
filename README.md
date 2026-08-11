@@ -6,3 +6,4 @@
 <br>Identify the chip `sudo ./Scriba-x86_64.AppImage -i`<br/>
 <br>Erase the chip `sudo ./Scriba-x86_64.AppImage -e`<br/>
 <br>Record the bios to the chip `sudo ./Scriba-x86_64.AppImage -W bios.bin`<br/>
+<br>Read the chip `sudo ./Scriba-x86_64.AppImage -R bios.bin`<br/>
