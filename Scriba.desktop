@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Scriba
+Exec=scriba
+Icon=icon
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;
