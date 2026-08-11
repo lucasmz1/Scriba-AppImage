@@ -1,6 +1,6 @@
 #!/bin/env bash
 sudo apt-get update
-sudo apt-get install libusb-1.0-0-dev pkg-config file binutils patchelf findutils grep sed coreutils strace xvfb wget git -y
+sudo apt-get install libusb-1.0-0-dev pkg-config file binutils patchelf findutils grep sed coreutils strace libudev-dev xvfb wget git -y
 mkdir AppDir
 wget -q -c "https://github.com/VHSgunzo/sharun/releases/download/v0.8.1/sharun-x86_64" -O ${GITHUB_WORKSPACE}/AppDir/sharun; chmod +x ${GITHUB_WORKSPACE}/AppDir/sharun
 wget -q -c "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage" -O appimagetool; chmod +x appimagetool
