@@ -8,7 +8,8 @@ wget -q -c "https://github.com/AppImage/appimagetool/releases/download/continuou
 git clone https://github.com/themactep/scriba.git
 cd scriba/
 make
-make DESTDIR=${GITHUB_WORKSPACE}/install/ install
+make DESTDIR="${GITHUB_WORKSPACE}"/install/ install
+cd "${GITHUB_WORKSPACE}"/
 cp "${GITHUB_WORKSPACE}"/icon.png "${GITHUB_WORKSPACE}"/AppDir/
 cp "${GITHUB_WORKSPACE}"/Scriba.desktop "${GITHUB_WORKSPACE}"/AppDir/
 cp -r "${GITHUB_WORKSPACE}"/install/etc/ "${GITHUB_WORKSPACE}"/AppDir/
