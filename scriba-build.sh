@@ -1,20 +1,19 @@
 #!/bin/env bash
 sudo apt-get update
 sudo apt-get install libusb-1.0-0-dev pkg-config file binutils patchelf findutils grep sed coreutils strace xvfb wget git -y
-mkdir install
 mkdir AppDir
 wget -q -c "https://github.com/VHSgunzo/sharun/releases/download/v0.8.1/sharun-x86_64" -O ${GITHUB_WORKSPACE}/AppDir/sharun; chmod +x ${GITHUB_WORKSPACE}/AppDir/sharun
 wget -q -c "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage" -O appimagetool; chmod +x appimagetool
 git clone https://github.com/themactep/scriba.git
 cd scriba/
 make
-make DESTDIR="${GITHUB_WORKSPACE}"/install/ install
-cd "${GITHUB_WORKSPACE}"/
+sudo make install
+cd "${GITHUB_WORKSPACE}"
 cp "${GITHUB_WORKSPACE}"/icon.png "${GITHUB_WORKSPACE}"/AppDir/
 cp "${GITHUB_WORKSPACE}"/Scriba.desktop "${GITHUB_WORKSPACE}"/AppDir/
-cp -r "${GITHUB_WORKSPACE}"/install/etc/ "${GITHUB_WORKSPACE}"/AppDir/
+cp "${GITHUB_WORKSPACE}"/install/etc/ "${GITHUB_WORKSPACE}"/AppDir/
 cd "${GITHUB_WORKSPACE}"/AppDir/
-./sharun l -p -v -e -s -k "${GITHUB_WORKSPACE}"/install/usr/bin/scriba
+xvfb-run -- ./sharun l -p -v -e -s -k /usr/bin/scriba
 ln sharun AppRun
 ./AppRun -g
 cd ..
